@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>مؤازر - المساعد الرقمي السريع</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet" />
+
+  <link href="style.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: #f7f9fc;
+      margin: 0;
+      color: #333;
+      direction: rtl;
+      text-align: right;
+    }
+
+    header {
+      background-color: #004080;
+      padding: 15px 25px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .logo {
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    header nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 1em;
+    }
+
+    header nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: 600;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+      font-family: 'Cairo', sans-serif;
+    }
+
+    button[type="submit"] {
+      margin-top: 25px;
+      background-color: #0277bd;
+      color: white;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      padding: 12px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 1.1em;
+      transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #015a9c;
+    }
+
+    #emergencyBtn {
+      display: none;
+      margin-top: 15px;
+      background: #e53935;
+      color: #fff;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      padding: 12px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 1.1em;
+      transition: background-color 0.3s ease;
+    }
+
+    #emergencyBtn:hover {
+      background-color: #b82b26;
+    }
+
+    #solution {
+      margin-top: 30px;
+      background: #e3f2fd;
+      border-radius: 10px;
+      padding: 20px;
+      min-height: 120px;
+      font-size: 1em;
+      color: #015a9c;
+      line-height: 1.5;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">مؤازر</div>
+    <nav>
+      <a href="about.html">من نحن</a>
+      <a href="terms.html">سياسة الاستخدام</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>مؤازر - المساعد الرقمي السريع</h1>
+
+    <form id="nasirForm">
+      <label for="problemType">اختر نوع المشكلة:</label>
+      <select id="problemType" required>
+        <option value="">- اختر -</option>
+        <option value="medical">مشكلة طبية</option>
+        <option value="mechanical">مشكلة ميكانيكية</option>
+        <option value="psychological">دعم نفسي</option>
+        <option value="legal">مشكلة قانونية</option>
+      </select>
+
+      <label for="problemDetails">اختر تفاصيل المشكلة (اختياري):</label>
+      <select id="problemDetails" disabled>
+        <option value="">- اختر نوع المشكلة أولاً -</option>
+      </select>
+
+      <button type="submit">احصل على المساعدة</button>
+      <button type="button" id="emergencyBtn">اتصل بالطوارئ</button>
+    </form>
+
+    <section id="solution" class="solution"></section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
